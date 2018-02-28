@@ -1,0 +1,26 @@
+<%= render 'partial/navbar' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- vertical-navbar -->
+      <%= render 'partial/verticalnavbar' %>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">公開状態の編集</div>
+        <div class="panel-body">
+          <%= form_for @listing do |f| %>
+					<div class="form-group">
+           <%= f.label :公開 %><br>
+           <!-- <%= f.select :home_type, options_for_select([["公開","true"],["非公開","マンション"],["アパート","アパート"]]),{prompt:"選択してください", required: true} ,{class:'form-control'} %> -->
+          <%= f.select :active, options_for_select([["公開","true"],["非公開","false"]]),{prompt:"選択してください", required: true} ,{class:'form-control'} %>
+         	</div>
+					<div class="actions">
+						<%= f.submit "保存する",class:"btn btn-primary" %>
+					</div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

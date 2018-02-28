@@ -1,0 +1,16 @@
+<H1>新しい書籍</H1>
+<p>書籍を追加します</p>
+<%= form_for  :book,url: books_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br>
+  </p>
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %><br>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to '戻る', books_path %>

@@ -1,0 +1,19 @@
+<h1>書籍一覧表示</h1>
+<p><%= link_to '新規登録',new_book_path %>
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>テキスト</th>
+    <th colspan="2"> </th>
+ </tr>
+
+ <% @books.each do |book| %>
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.text %></td>
+    <td><%= link_to '表示',book_path(book) %></td>
+    <td><%= link_to '編集',edit_book_path(book) %></td>
+    <td><%= link_to '削除',book_path(book),method: :delete,data:{confirm: '本当に削除してもいいですか？'} %></td>
+  </tr>
+ <% end %>
+</table>

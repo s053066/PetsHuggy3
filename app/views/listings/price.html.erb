@@ -1,0 +1,29 @@
+<%= render 'partial/navbar' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- vertical-navbar -->
+      <%= render 'partial/verticalnavbar' %>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">料金の設定</div>
+        <div class="panel-body">
+          <%= form_for @listing do |f| %>
+					<div class="form-group">
+           <%= f.label :一泊あたりの料金 %><br>
+           <div class="input-group">
+             <%= f.text_field :price_pernight, class: "form-control", placeholder: "(例)100"  %>
+
+             <div class="input-group-addon">円</div>
+           </div>
+          </div>
+					<div class="actions">
+						<%= f.submit "保存する",class:"btn btn-primary" %>
+					</div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

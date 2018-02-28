@@ -1,0 +1,47 @@
+<script type="text/javascript">
+  $(function(){
+    <% if !@user.email.blank? %>
+      $("#ver-email").attr('class','vertification-checked');
+    <% end %>
+    <% if !@user.phone_number.blank? %>
+      $("#ver-phone").attr('class','vertification-checked');
+    <% end %>
+    <% if !@user.provider.blank? %>
+      $("#ver-provider").attr('class','vertification-checked');
+    <% end %>
+  });
+</script>
+
+
+<%= render 'partial/navbar' %>
+<div class="container">
+    <div class="row">
+  <div class="col-md-4">
+    <div>
+    				<%= image_tag @user.image + "?type=large", class: "profile-full img-circle" %>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">認証済み項目</div>
+      <div class="panel-body">
+        <div id ="ver-email">
+          メールアドレス
+        </div>
+      </div>
+      <div class="panel-body">
+        <div id="ver-phone">
+          電話番号
+        </div>
+      </div>
+      <div class="panel-body">
+        <div id="ver-provider">
+          Facebook
+        </div>
+      </div>
+    </div>
+    </div>
+  <div class="col-md-8">
+    <h1>こんにちは<%= @user.name %>です</h1>
+    <p><%= @user.description %></p>
+  </div>
+  </div>
+</div>

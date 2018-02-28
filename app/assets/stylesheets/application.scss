@@ -1,0 +1,118 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "toastr";
+@import "dropzone/dropzone";
+
+.jumbotron {
+    padding-top: 0px;
+    // 背景画像を暗くする
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05) ), url(person-845325_1920.jpg);
+	background-size: cover;
+	// 背景画像の位置を決める
+	background-position: 0% 30%;
+	height: 430px;
+}
+
+.jumbotron .container .row{
+    margin-top: 200px;
+    color: #fff;
+}
+
+.navbar-default {
+    background: transparent;
+    border-color: transparent;
+    z-index: 10;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+    font-size: 13px;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+// deviseを利用した場合のナビバーのCSS
+.navbar-devise {
+  background: #fff;
+  border-color: #fff;
+  z-index: 10;
+}
+
+.navbar-devise .navbar-nav > li > a {
+  color: #222;
+}
+.navbar-devise  .navbar-brand{
+  color:#222;
+}
+
+// トップページのnavbarのドロップダウンがクリックされた時
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: transparent;
+    color: #555;
+}
+// facebookボタンの背景色指定
+.btn-facebook{
+  color: #fff;
+  background-color: #4c66a4;
+}
+
+// プロフィール画像のサイズ
+.thumnail-ss{
+  width:28px;
+  height:28px;
+}
+
+.profile-full {
+  width: 100%;
+}
+
+.vertification-checked:before{
+  content: "\f00c";
+  font-family: FontAwesome;
+  position:relative;
+  z-index:100;
+  top:2px;
+  font-size:1.55em;
+  text-align: center;
+  width: 1.25em;
+  color:#00d1c1;
+}
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+.sidebar-nav .navbar-default .navbar-nav > li {
+  background:#fff;
+  border:1px solid #ddd;
+}
+.sidebar-nav .navbar-default .navbar-nav li a{
+  color: #222;
+}
+
+body{
+  color:#222;
+  background-color: #f8f8f8;
+}
