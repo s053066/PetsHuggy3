@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -42,6 +42,15 @@ gem 'omniauth-facebook'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'dropzonejs-rails'
 gem "figaro"
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
